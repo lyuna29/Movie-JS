@@ -16,7 +16,8 @@ fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', opti
             moviesArea.innerHTML = "";
             const res = movies
               .map((movie) => {
-                if (movie.title.toLowerCase().includes(val)) {
+                if (movie.title.toLowerCase().includes(val.toLowerCase())
+              ) {
                   return `
                 <div class="movie-card" onclick="showAlert(${movie.id})"> 
                     <img class="poster" src= "https://image.tmdb.org/t/p/w500/${movie.poster_path}"/>   
